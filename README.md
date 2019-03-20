@@ -26,5 +26,5 @@ Yasmin Stoss is the sole contributor
 contact: ystoss@vols.utk.edu 
 ORCID: 0000-0003-3205-7872
 
-# Intellectual Property
+# Copyright and Intellectual Property
 All analyses and interpretations presented belong to Yasmin Stoss
