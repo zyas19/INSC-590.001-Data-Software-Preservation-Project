@@ -27,28 +27,27 @@ Version: 1.1.463
 Plotly, lubridate, tidytext, tidyverse, lmtest, RColorBrewer, wordcloud
 
 # R Code to install and initialize packages
-NOTE: all code will be indicated with a "*"
-* install.packages(c("lubridate", "tidytext", "tidyverse", "lmtest", "RColorBrewer", wordcloud"))
-* install.packages(“plotly”, repos=“http://cran.rstudio.com/ 229”, dependencies=TRUE)
-* packages <- c("lubridate", "tidytext", "tidyverse", "lmtest", "RColorBrewer", wordcloud", "plotly")
-* lapply(packages, library, character.only = TRUE)
+   * install.packages(c("lubridate", "tidytext", "tidyverse", "lmtest", "RColorBrewer", wordcloud"))
+   * install.packages(“plotly”, repos=“http://cran.rstudio.com/ 229”, dependencies=TRUE)
+   * packages <- c("lubridate", "tidytext", "tidyverse", "lmtest", "RColorBrewer", wordcloud", "plotly")
+   * lapply(packages, library, character.only = TRUE)
 
 # Steps and R Code for Project Analyses
-1.  Download "Clemson.csv" onto your local hard drive
-2.  Open R Studio
+1. Download "Clemson.csv" onto your local hard drive
+2. Open R Studio
 3.	Read in csv file
-    * tweets <-read.csv("Clemson.csv")
+   * tweets <-read.csv("Clemson.csv")
 4.	Format dates in the " " column of the spreadsheet. This enables analyses using dates and timeframes. 
-    * tweets_dated <-tweets %>% mutate(Date = mdy_hm(publish_date))
+   * tweets_dated <-tweets %>% mutate(Date = mdy_hm(publish_date))
 5. Rename the "Content" column to "Tweet". This makes things less confusing down the line
-    * colnames(tweets_dated)[colnames(tweets_dated)=="content"] <-"Tweet"
+   * colnames(tweets_dated)[colnames(tweets_dated)=="content"] <-"Tweet"
 6. Clean data by removing URLs and other unwanted characters
-    * replace_reg <-"https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|https"
-    * unnest_reg <-"([^A-Za-z_\\d#@']|'(?![A-Za-z_\\d#@]))"
-    * clean_tweets<-tweets_dated%>%mutate(Tweet=str_replace_all(Tweet,replace_reg,""))
+   * replace_reg <-"https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|https"
+   * unnest_reg <-"([^A-Za-z_\\d#@']|'(?![A-Za-z_\\d#@]))"
+   * clean_tweets<-tweets_dated%>%mutate(Tweet=str_replace_all(Tweet,replace_reg,""))
 7.	Sort out all tweets containing the keyword(s): 
-    * keywords<-c("vacc", “Vacc", “vax”, “Vax”, “clean coal", “Clean Coal”, "paris climate accord", “Paris Climate Accord”, "ebola", “Ebola, "zika", “Zika, "dakota access pipeline", “Dakota Access Pipeline”,"pasteuriz", “Pasteuriz”, “frack”, “Frack” )
-    * tweets_sci_words<-clean_tweets%>%filter(str_detect(Tweet,paste(keywords, collapse="|")))
+   * keywords<-c("vacc", “Vacc", “vax”, “Vax”, “clean coal", “Clean Coal”, "paris climate accord", “Paris Climate Accord”, "ebola", “Ebola, "zika", “Zika, "dakota access pipeline", “Dakota Access Pipeline”,"pasteuriz", “Pasteuriz”, “frack”, “Frack” )
+   * tweets_sci_words<-clean_tweets%>%filter(str_detect(Tweet,paste(keywords, collapse="|")))
 8. Count instances of the word Vaccine and all variations of (result=821)
    * sum(str_count(tweets_sci_words$Tweet, "vacc"))
    * sum(str_count(tweets_sci_words$Tweet, "Vacc"))
