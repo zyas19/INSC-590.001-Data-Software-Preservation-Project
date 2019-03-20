@@ -7,7 +7,7 @@ Data is from another class (ANTH 511 Spring 2019) project involving analysis of 
 The data set used was created by Clemson University researchers Darren Linvill, an associate professor of communication, and Patrick Warren, an associate professor of economics in 2018. The original data set can be found here: https://github.com/fivethirtyeight/russian-troll-tweets
 
 # Files
-Anth511_TwitterAnalysis_StossY.pdf : Paper summarizing findings. Contains all code.
+Anth511_TwitterAnalysis_StossY.pdf : Paper summarizing findings.
 
 Twitter_Analysis_workspace.Rproj : workspace in R Studio. This file can be used to open R Studio with all relevant libraries and dataframes in tact. The local hardrive must have all files already loaded with the same name for this to function.
 
@@ -27,4 +27,4 @@ contact: ystoss@vols.utk.edu
 ORCID: 0000-0003-3205-7872
 
 # Copyright and Intellectual Property
-All analyses and interpretations presented belong to Yasmin Stoss
+All code, analyses, and interpretations presented belong to Yasmin Stoss
