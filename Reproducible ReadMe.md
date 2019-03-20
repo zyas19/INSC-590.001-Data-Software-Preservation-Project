@@ -39,16 +39,16 @@ Plotly, lubridate, tidytext, tidyverse, lmtest, RColorBrewer, wordcloud
    * tweets <-read.csv("Clemson.csv")
 4.	Format dates in the " " column of the spreadsheet. This enables analyses using dates and timeframes. 
    * tweets_dated <-tweets %>% mutate(Date = mdy_hm(publish_date))
-5. Rename the "Content" column to "Tweet". This makes things less confusing down the line
+5.  Rename the "Content" column to "Tweet". This makes things less confusing down the line
    * colnames(tweets_dated)[colnames(tweets_dated)=="content"] <-"Tweet"
-6. Clean data by removing URLs and other unwanted characters
+6.  Clean data by removing URLs and other unwanted characters
    * replace_reg <-"https://t.co/[A-Za-z\\d]+|http://[A-Za-z\\d]+|&amp;|&lt;|&gt;|https"
    * unnest_reg <-"([^A-Za-z_\\d#@']|'(?![A-Za-z_\\d#@]))"
    * clean_tweets<-tweets_dated%>%mutate(Tweet=str_replace_all(Tweet,replace_reg,""))
 7.	Sort out all tweets containing the keyword(s): 
    * keywords<-c("vacc", “Vacc", “vax”, “Vax”, “clean coal", “Clean Coal”, "paris climate accord", “Paris Climate Accord”, "ebola", “Ebola, "zika", “Zika, "dakota access pipeline", “Dakota Access Pipeline”,"pasteuriz", “Pasteuriz”, “frack”, “Frack” )
    * tweets_sci_words<-clean_tweets%>%filter(str_detect(Tweet,paste(keywords, collapse="|")))
-8. Count instances of the word Vaccine and all variations of (result=821)
+8.  Count instances of the word Vaccine and all variations of (result=821)
    * sum(str_count(tweets_sci_words$Tweet, "vacc"))
    * sum(str_count(tweets_sci_words$Tweet, "Vacc"))
    * sum(str_count(tweets_sci_words$Tweet, "Vax"))
