@@ -7,15 +7,17 @@ Data is from another class (ANTH 511 Spring 2019) project involving analysis of 
 The data set used was created by Clemson University researchers Darren Linvill, an associate professor of communication, and Patrick Warren, an associate professor of economics in 2018. The original data set can be found here: https://github.com/fivethirtyeight/russian-troll-tweets
 
 # Files
-Anth511_TwitterAnalysis_StossY : Paper summarizing findings. Contains all code.
+Anth511_TwitterAnalysis_StossY.pdf : Paper summarizing findings. Contains all code.
 
-Twitter_Analysis_workspace : workspace in R Studio. This file can be used to open R Studio with all relevant libraries and dataframes in tact. The local hardrive must have all files already loaded with the same name for this to function.
+Twitter_Analysis_workspace.Rproj : workspace in R Studio. This file can be used to open R Studio with all relevant libraries and dataframes in tact. The local hardrive must have all files already loaded with the same name for this to function.
+
+Clemson.csv : The original Clemson data set downloaded from the Five Thirty Eight Github Repository described in the Data seciton above. 
 
 Keywords_Count.csv : spreadsheet with a count of all the keywords. This is the only spreadsheet that cannot be created using the original Clemson Data set described in the Data section above.
 
 Multiple JPG files : Original graphs. Not all were used the in the final summary presented in class. 
 
-ReadMe : this file which explains the project and data
+ReadMe.md : this file which explains the project and data
 
 Reproducible ReadMe: file that explains how to reproduce this project step by step. 
 
